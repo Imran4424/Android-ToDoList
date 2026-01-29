@@ -1,4 +1,7 @@
 package com.luminous.todolist.data
 
-class TaskViewModel {
+import androidx.lifecycle.ViewModel
+
+class TaskViewModel(private val taskDao: TaskDao): ViewModel() {
+        
 }

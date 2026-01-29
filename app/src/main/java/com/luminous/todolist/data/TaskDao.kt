@@ -12,7 +12,7 @@ interface TaskDao {
                         SELECT * FROM tasks
                         WHERE isCompleted = :completed
                         ORDER BY 
-                            CASE WHEN :completed = 1 THEN completedAt END DESC
+                            CASE WHEN :completed = 1 THEN completedAt ELSE createdAt END DESC
                 """
         )
         fun observeByCompletion(completed: Boolean): Flow<List<TaskEntity>>
